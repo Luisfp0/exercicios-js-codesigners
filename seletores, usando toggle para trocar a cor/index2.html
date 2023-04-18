@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      h1 {
+        width: 300px;
+        height: 50px;
+        display: block;
+        background-color: #f3f3f3;
+        margin: 15px auto;
+        line-height: 50px;
+        border-radius: 10px;
+      }
+
+      .bodi {
+        background-color: black;
+      }
+
+      .my-buttons {
+        width: 300px;
+        height: 50px;
+        margin: 15px auto;
+        display: block;
+      }
+
+      .my-buttons button {
+        width: 50%;
+        height: 40px;
+        float: left;
+        border-radius: 15px;
+      }
+
+      .my-buttons button:hover {
+        background-color: yellow;
+      }
+
+      .blue {
+        color: blue;
+      }
+
+      .background-blue {
+        background-color: blue;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .background-red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body class="bodi" style="text-align: center; margin-top: 100px">
+    <h1 class="item-azul">Azul 1</h1>
+    <h1 class="item-azul">Azul 2</h1>
+    <h1 class="item-azul">Azul 3</h1>
+
+    <h1 class="item-vermelho">Vermelho 1</h1>
+    <h1 class="item-vermelho">Vermelho 2</h1>
+    <h1 class="item-vermelho">Vermelho 3</h1>
+
+    <div class="my-buttons">
+      <button onclick="facaAzul()">Azuis</button>
+      <button onclick="facaVermelho()">Vermelhos</button>
+    </div>
+
+    <script>
+      var azul = document.querySelectorAll('.item-azul');
+      var vermelho = document.querySelectorAll('.item-vermelho');
+      var fundo = document.querySelector('.bodi');
+
+      function facaAzul() {
+        for (i = 0; azul.length > i; i++) {
+          azul[i].classList.toggle('blue');
+          vermelho[i].classList.remove('red');
+        }
+        fundo.classList.toggle('background-blue');
+        fundo.classList.remove('background-red');
+      }
+
+      function facaVermelho() {
+        for (i = 0; vermelho.length > i; i++) {
+          vermelho[i].classList.toggle('red');
+          azul[i].classList.remove('blue');
+        }
+        fundo.classList.toggle('background-red');
+        fundo.classList.remove('background-blue');
+      }
+    </script>
+  </body>
+</html>
