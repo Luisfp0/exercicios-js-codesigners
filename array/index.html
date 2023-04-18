@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <style>
+      .frutas {
+        width: 450px;
+        height: auto;
+        display: table;
+        padding: 30px;
+        margin: 60px auto;
+        background-color: indigo;
+        border-radius: 8px;
+        list-style: none;
+      }
+
+      .frutas li {
+        color: mediumspringgreen;
+        text-align: center;
+        line-height: 41px;
+        font-size: 41px;
+        font-family: monospace;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="frutas" id="frutas"></ul>
+
+    <script>
+      let listaFrutas = document.getElementById('frutas');
+      let frutas = ['Laranja', 'Kiwi', 'Morango'];
+      let myList = [];
+
+      for (i = 0; frutas.length > i; i++) {
+        myList.push('<li>' + frutas[i] + '</li>');
+      }
+
+      listaFrutas.insertAdjacentHTML('beforeend', myList.join(''));
+    </script>
+  </body>
+</html>
