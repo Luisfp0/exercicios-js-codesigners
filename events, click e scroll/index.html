@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <style>
+      .mybox {
+        width: 450px;
+        height: 200px;
+        display: block;
+        margin: 60px auto;
+        background-color: indigo;
+        color: mediumspringgreen;
+        text-align: center;
+        line-height: 200px;
+        font-size: 41px;
+        font-family: monospace;
+        font-weight: normal;
+      }
+
+      .black {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mybox" id="box">Codesigners !</div>
+    <div class="mybox">Codesigners !</div>
+    <div class="mybox">Codesigners !</div>
+    <div class="mybox">Codesigners !</div>
+  </body>
+  <script>
+    let myBox = document.getElementById('box');
+    let allBoxes = document.querySelectorAll('.mybox');
+    myBox.addEventListener('click', function () {
+      for (i = 0; allBoxes.length > i; i++) {
+        allBoxes[i].classList.add('black');
+      }
+    });
+
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset > 100 && window.pageYOffset < 110) {
+        for (i = 0; allBoxes.length > i; i++) {
+          allBoxes[i].classList.add('black');
+        }
+      }
+      if (window.pageYOffset < 100) {
+        for (i = 0; allBoxes.length > i; i++) {
+          allBoxes[i].classList.remove('black');
+        }
+      }
+    });
+  </script>
+</html>
